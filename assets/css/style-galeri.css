@@ -14,9 +14,7 @@ body{
     margin:auto;
     background:pink;
     overflow:auto;
-    /* align-items: center; */
 }
-
 .gallery1{
     width: 280px;
     height: 280px;
@@ -41,24 +39,20 @@ body{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-
 .desc{
     padding:15px;
     text-align:center;
-    /* background: yellow; */
 }
 .gallery1 img{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     width:100%;
     height: 80%;
-    /* object-fit: cover; */
 }
 .gallery2 img{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     width:100%;
     height: 80%;
-    /* object-fit: cover; */
 }
 
