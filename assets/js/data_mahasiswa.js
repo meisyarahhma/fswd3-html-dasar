@@ -1020,8 +1020,8 @@ let minMale = Math.min.apply(null, scoreMale1);
 let totalFemale = scoreFemale1.reduce(sum);
 let totalMale = scoreMale1.reduce(sum);
 
-var hasilFemale=totalFemale/scoreFemale1.length; // rata rata female
-var hasilMale=totalMale/scoreMale1.length; // rata rata male
+let hasilFemale=totalFemale/scoreFemale1.length; // rata rata female
+let hasilMale=totalMale/scoreMale1.length; // rata rata male
 
 // rata-rata score female
 // for(var i=0; i<scoreFemale1.length; i++){
