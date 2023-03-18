@@ -1020,18 +1020,21 @@ let minMale = Math.min.apply(null, scoreMale1);
 let totalFemale = scoreFemale1.reduce(sum);
 let totalMale = scoreMale1.reduce(sum);
 
+var hasilFemale=totalFemale/scoreFemale1.length; // rata rata female
+var hasilMale=totalMale/scoreMale1.length; // rata rata male
 
-// rata-rata score remale
-for(var i=0; i<scoreFemale1.length; i++){
-  totalFemale += parseFloat(scoreFemale1[i])
-  var hasilFemale = totalFemale / scoreFemale1.length;
-}
+// rata-rata score female
+// for(var i=0; i<scoreFemale1.length; i++){
+//   totalFemale += parseFloat(scoreFemale1[i])
+//   var hasilFemale = totalFemale / scoreFemale1.length;
+// }
+// const hasilFemale=scoreFemale1.reduce((total, value) => Math.min(total+value));
 
 //rata-rata score male
-for(var i=0; i<scoreMale1.length; i++){
-  totalMale += parseFloat(scoreMale1[i])
-  var hasilMale = totalMale / scoreMale1.length;
-}
+// for(var i=0; i<scoreMale1.length; i++){
+//   totalMale += parseFloat(scoreMale1[i])
+//   var hasilMale = totalMale / scoreMale1.length;
+// }
 
 function cekMale(value, index, array){
   return value.gender == "M" 
