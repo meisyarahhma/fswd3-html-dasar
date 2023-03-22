@@ -1,3 +1,11 @@
+// const baseUrl = "https://crudcrud.com/api/";
+// const apiKey ="bc52c9075a414188938249bc3e5b5ec9"
+// const url = "https://crudcrud.com/api/bc52c9075a414188938249bc3e5b5ec9%2Ftodo"
+
+
+// let todo=[];
+
+// loadTodo();
 
 //Initial References
 const newTaskInput = document.querySelector("#new-task input");
@@ -10,11 +18,25 @@ let count;
 window.onload = () => {
   updateNote = "";
   count = Object.keys(localStorage).length;
-  displayTasks();
+  displayTasks();  
+  fetch("https://crudcrud.com/api/bc52c9075a414188938249bc3e5b5ec9%2Ftodo", {
+    method: "POST",
+    headers:{
+      "Contentt-Type":"application/json"
+    },
+  }) 
+  .then ((response) => response.json())
+  .then ((count)=> {
+    todo = count;
+    todo.forEach((todo) => {
+      createList(todo);
+    });
+  });
 };
 
+
 //Function to Display The Tasks
-const displayTasks = () => {
+function displayTasks (todo) {
   if (Object.keys(localStorage).length > 0) {
     tasksDiv.style.display = "inline-block";
   } else {
@@ -97,6 +119,9 @@ const removeTask = (taskValue) => {
 const updateStorage = (index, taskValue, completed) => {
   localStorage.setItem(`${index}_${taskValue}`, completed);
   displayTasks();
+
+  
+
 };
 
 //Function To Add New Task
@@ -110,14 +135,39 @@ document.querySelector("#push").addEventListener("click", () => {
     if (updateNote == "") {
       //new task
       updateStorage(count, newTaskInput.value, false);
-    } else {
-      //update task
-      let existingCount = updateNote.split("_")[0];
-      removeTask(updateNote);
-      updateStorage(existingCount, newTaskInput.value, false);
-      updateNote = "";
-    }
+    } 
+    // else {
+    //   //update task
+    //   let existingCount = updateNote.split("_")[0];
+    //   removeTask(updateNote);
+    //   updateStorage(existingCount, newTaskInput.value, false);
+    //   updateNote = "";
+    // }
     count += 1;
     newTaskInput.value = "";
   }
+
+  
 });
+
+// const todo={
+//     title: ,
+//     value: false,
+//   }
+
+
+
+// function loadTodo(){
+//   fetch(url) 
+//   .then ((response) => response.json())
+//   .then ((data)=> {
+//     todo = data;
+//     todo.forEach((todo) => {
+//       createList(todo);
+//     });
+//   });
+// }
+
+
+
+
