@@ -1,11 +1,10 @@
-// const baseUrl = "https://crudcrud.com/api/";
-// const apiKey ="bc52c9075a414188938249bc3e5b5ec9"
-// const url = "https://crudcrud.com/api/bc52c9075a414188938249bc3e5b5ec9%2Ftodo"
+
+  fetch("https://crudcrud.com/api/bc52c9075a414188938249bc3e5b5ec9%2Ftodo")
+  .then ((response) => response.json())
+  .then ((tasksDiv)=> console.log(tasksDiv)
+  );
 
 
-// let todo=[];
-
-// loadTodo();
 
 //Initial References
 const newTaskInput = document.querySelector("#new-task input");
@@ -19,19 +18,6 @@ window.onload = () => {
   updateNote = "";
   count = Object.keys(localStorage).length;
   displayTasks();  
-  fetch("https://crudcrud.com/api/bc52c9075a414188938249bc3e5b5ec9%2Ftodo", {
-    method: "POST",
-    headers:{
-      "Contentt-Type":"application/json"
-    },
-  }) 
-  .then ((response) => response.json())
-  .then ((count)=> {
-    todo = count;
-    todo.forEach((todo) => {
-      createList(todo);
-    });
-  });
 };
 
 
@@ -42,7 +28,6 @@ function displayTasks (todo) {
   } else {
     tasksDiv.style.display = "none";
   }
-
   //Clear the tasks
   tasksDiv.innerHTML = "";
 
@@ -119,9 +104,6 @@ const removeTask = (taskValue) => {
 const updateStorage = (index, taskValue, completed) => {
   localStorage.setItem(`${index}_${taskValue}`, completed);
   displayTasks();
-
-  
-
 };
 
 //Function To Add New Task
@@ -136,38 +118,24 @@ document.querySelector("#push").addEventListener("click", () => {
       //new task
       updateStorage(count, newTaskInput.value, false);
     } 
-    // else {
-    //   //update task
-    //   let existingCount = updateNote.split("_")[0];
-    //   removeTask(updateNote);
-    //   updateStorage(existingCount, newTaskInput.value, false);
-    //   updateNote = "";
-    // }
     count += 1;
     newTaskInput.value = "";
   }
 
-  
 });
 
-// const todo={
-//     title: ,
-//     value: false,
-//   }
+let fecthOptions = {
+    method: "POST",
+    headers:{
+      "Contentt-Type":"application/json"
+    }, 
+    body : JSON.stringify(newTaskInput)
+  }
 
-
-
-// function loadTodo(){
-//   fetch(url) 
-//   .then ((response) => response.json())
-//   .then ((data)=> {
-//     todo = data;
-//     todo.forEach((todo) => {
-//       createList(todo);
-//     });
-//   });
-// }
-
+  fetch("https://crudcrud.com/api/bc52c9075a414188938249bc3e5b5ec9%2Ftodo", fecthOptions)
+  .then ((response) => response.json())
+  .then ((tasksDiv)=> console.log(tasksDiv)
+  );
 
 
 
