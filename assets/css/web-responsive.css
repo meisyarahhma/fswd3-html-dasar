@@ -81,6 +81,14 @@
     /* padding: 15px; */
 }
 
+.bawah-gambar .gambar .teks-gambar{
+    position:absolute;
+    width: 70%;
+    top:55%;
+    /* right: 15%; */
+    
+}
+
 .bawah-dua{
     display: flex;
     width:20%;
@@ -95,14 +103,17 @@
     display: flex;
     padding: 10px;
     gap: 10px;
+    position: relative;
     background-color: white;
     flex-direction: column;
+    
 }
 
 .gambar img{
     display: flex;
     width:100%;
-    height: 80%;
+    height: 100%;
+    
 }
 
 .link-gambar{
@@ -110,7 +121,7 @@
     padding: 5px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .blog-atas{
         display: flex;
         flex-wrap: nowrap;
@@ -143,15 +154,16 @@
 
     .blog-tengah{
         display: none;
-        /* display: flex; */
-        /* text-align:center; */
-        /* flex-direction: column; */
-        /* flex-wrap: nowrap;
-        justify-content: center;
-        padding: 15px; */
-        /* gap: 15px; */
-        /* background-color: rgb(205, 205, 245); */
     }
+
+    .bawah-gambar .gambar .teks-gambar{
+        position:absolute;
+        width: 90%;
+        top: 65%;
+        /* right: 15%; */
+        
+    }
+
 
     .blog-bawah{
         display: flex;
@@ -181,12 +193,13 @@
 
     .bawah-gambar{
         display: flex;
-        /* flex-wrap: nowrap;
-        justify-content: space-around; */
+        flex-wrap: nowrap;
+        /* justify-content: space-around; */
         flex-direction: column;
         width:100%;
         height: 100%;
         gap: 15px;
+        /* flex-wrap: wrap; */
         /* padding: 15px; */
     }
     .bawah-dua{
@@ -197,5 +210,14 @@
         flex-wrap: wrap;
         padding: 10px;
         /* background-color: white; */
+    }
+
+    
+}
+
+    
+@media screen and (min-width: 600px) and (max-width: 1300px){
+    .teks-gambar {
+        display: none;
     }
 }
