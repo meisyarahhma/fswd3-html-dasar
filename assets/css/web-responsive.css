@@ -211,18 +211,15 @@
         padding: 10px;
         /* background-color: white; */
     }
+    .teks-gambar {
+        display: none;
+    }
 
     
 }
 
     
 @media screen and (min-width: 600px) and (max-width: 1300px){
-    .teks-gambar {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 300px) and (max-width: 590px){
     .teks-gambar {
         display: none;
     }
